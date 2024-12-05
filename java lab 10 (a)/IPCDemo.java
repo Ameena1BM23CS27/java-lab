@@ -8,7 +8,7 @@ class SharedResource {
             wait(); 
         }
         this.data = data;
-        System.out.println("Produced: " + data);
+        System.out.println("Put: " + data);
         isDataAvailable = true;
         notify(); 
     }
@@ -18,7 +18,7 @@ class SharedResource {
         while (!isDataAvailable) {
             wait(); 
         }
-        System.out.println("Consumed: " + data);
+        System.out.println("Got: " + data);
         isDataAvailable = false;
         notify();  
     }
