@@ -1,4 +1,3 @@
-
 class Message1 extends Thread {
     @Override
     public void run() {
@@ -12,7 +11,6 @@ class Message1 extends Thread {
         }
     }
 }
-
 
 class Message2 implements Runnable {
     @Override
@@ -30,11 +28,13 @@ class Message2 implements Runnable {
 
 public class MultiThreadExample {
     public static void main(String[] args) {
-        
+        // Print your name once at the beginning
+        System.out.println("Ameena Yasmeen\n1BM23CS027");
+
+        // Start the threads
         Message1 thread1 = new Message1();
         thread1.start();
 
-        
         Message2 message2 = new Message2();
         Thread thread2 = new Thread(message2);
         thread2.start();
