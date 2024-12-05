@@ -9,7 +9,6 @@ class A {
             System.out.println("A Interrupted");
         }
 
-        
         synchronized (b) {
             System.out.println(name + " trying to call B.last()");
             b.last();
@@ -32,7 +31,6 @@ class B {
             System.out.println("B Interrupted");
         }
 
-        
         synchronized (a) {
             System.out.println(name + " trying to call A.last()");
             a.last();
@@ -49,11 +47,14 @@ class Deadlock implements Runnable {
     B b = new B();
 
     Deadlock() {
+        // Print your name at the beginning
+        System.out.println("Ameena Yasmeen\n1BM23CS027");
+
         Thread.currentThread().setName("MainThread");
         Thread t = new Thread(this, "RacingThread");
         t.start();
 
-        a.foo(b); 
+        a.foo(b);
         System.out.println("Back in main thread");
     }
 
